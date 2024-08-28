@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-daemonset
+  labels:
+    app: frontend
+
+spec:
+  updateStrategy:
+    # RollingUpdate: Esta é a estratégia padrão. Com o RollingUpdate, os DaemonSets são atualizados de forma gradual, substituindo os pods antigos por novos, um por um (ou em lotes, dependendo da configuração de maxUnavailable).
+    # OnDelete: Nesta estratégia, os pods do DaemonSet só são atualizados quando são explicitamente deletados.
+    type: OnDelete
+    rollingUpdate:
+      maxUnavailable: 4
+  template:
+    metadata:
+      name: my-pod-webserver
+      labels:
+        apps: my-app
+        tier: frontend
+    spec:
+      containers:
+      - name: my-container-nginx
+        image: httpd
+
+  selector:
+    matchLabels:
+      apps: my-app

@@ -16,7 +16,11 @@ spec:
       containers:
       - name: my-container-nginx
         image: nginx
-
+      #nodeSelector:
+      #  disktype: ssd
+      nodeName: minikube-m03
   selector:
     matchLabels:
       apps: my-app
+
+# nodeSelector e nodeName, duas opções distintas.
