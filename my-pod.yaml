@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: my-pod-example # name of pod.
+  labels:
+    app-type: web # used to refer pod in other moment.
+
+spec:
+  containers:
+    - name: my-container-apache
+      image: httpd
