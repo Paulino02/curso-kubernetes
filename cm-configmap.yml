@@ -1,0 +1,18 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: my-cm
+  namespace: default
+data:
+  #Connection database config
+  my.config.db: |
+    database: trocando
+    database_uri: mongodb://localhost:27017
+    
+  #User interface
+  test.txt: |
+    font.title: Arial
+    background-color: red
+    theme.1: clean
+    1theme.2: dark
+    carro: honda
