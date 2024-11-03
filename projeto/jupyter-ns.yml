@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: jupyter
+  annotations:
+    desc: "Namespace for jupyter notebook application"
+    proj: "final project k8s course"
+    owner: "tiago paulino"
+    phone: 123-456-789
+    
